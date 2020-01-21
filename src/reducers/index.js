@@ -26,8 +26,10 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 car: {
+                    ...state.car,
+                    price: state.car.price + action.payload.price,
                     features: [...state.car.features, action.payload]
-                }
+                } 
             }
         default:
             return state
