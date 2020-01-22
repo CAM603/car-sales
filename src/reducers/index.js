@@ -23,13 +23,17 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case BUY_ITEM:
-            return {
-                ...state,
-                car: {
-                    ...state.car,
-                    price: state.car.price + action.payload.price,
-                    features: [...state.car.features, action.payload]
-                } 
+            if (state.car.features.find(el => el === action.payload)) {
+                return state
+            } else {
+                return {
+                    ...state,
+                    car: {
+                        ...state.car,
+                        price: state.car.price + action.payload.price,
+                        features: [...state.car.features, action.payload]
+                    } 
+                }
             }
         case REMOVE_ITEM:
             return {
