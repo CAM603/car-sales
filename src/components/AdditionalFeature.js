@@ -1,30 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { buyItem } from '../actions'
+import { useDispatch } from 'react-redux';
+import { buyItem, BUY_ITEM } from '../actions'
 
 const AdditionalFeature = props => {
-
-  const buyItem = item => {
-    // dipsatch an action here to add an item
-    props.buyItem(item);
-  };
+  const dispatch = useDispatch()
 
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
       <button 
       className="button"
-      onClick={() => buyItem(props.feature)}
+      onClick={() => dispatch({type: BUY_ITEM, payload: props.feature})}
       >Add</button>
       {props.feature.name} (+{props.feature.price})
     </li>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    state: state
-  }
-}
-
-export default connect(mapStateToProps,{buyItem})(AdditionalFeature);
+export default AdditionalFeature;
