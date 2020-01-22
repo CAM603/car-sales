@@ -14,10 +14,10 @@ const App = (props) => {
     // dispatch an action here to remove an item
   };
 
-  const buyItem = item => {
-    // dipsatch an action here to add an item
-    props.buyItem(item);
-  };
+  // const buyItem = item => {
+  //   // dipsatch an action here to add an item
+  //   props.buyItem(item);
+  // };
 
   return (
     <div className="boxes">
@@ -28,7 +28,6 @@ const App = (props) => {
       <div className="box">
         <AdditionalFeatures 
         additionalFeatures={props.state.additionalFeatures} 
-        buyItem={buyItem}
         />
         <Total car={props.state.car} additionalPrice={props.state.additionalPrice} />
       </div>

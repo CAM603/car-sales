@@ -11,7 +11,6 @@ const AdditionalFeatures = props => {
             <AdditionalFeature 
             key={item.id} 
             feature={item}
-            buyItem={props.buyItem}
             />
           ))}
         </ol>
