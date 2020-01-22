@@ -8,28 +8,17 @@ import Total from './components/Total';
 
 import { buyItem } from './actions';
 
-const App = (props) => {
-
-  // const removeFeature = item => {
-  //   // dispatch an action here to remove an item
-  // };
-
-  // const buyItem = item => {
-  //   // dipsatch an action here to add an item
-  //   props.buyItem(item);
-  // };
+const App = () => {
 
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={props.state.car} />
-        <AddedFeatures car={props.state.car} />
+        <Header/>
+        <AddedFeatures/>
       </div>
       <div className="box">
-        <AdditionalFeatures 
-        additionalFeatures={props.state.additionalFeatures} 
-        />
-        <Total car={props.state.car} additionalPrice={props.state.additionalPrice} />
+        <AdditionalFeatures/>
+        <Total/>
       </div>
     </div>
   );
