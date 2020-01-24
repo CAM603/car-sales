@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeItem, REMOVE_ITEM } from '../actions';
+import { REMOVE_ITEM } from '../actions';
 
 const AddedFeature = props => {
   const dispatch = useDispatch()
